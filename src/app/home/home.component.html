@@ -10,14 +10,66 @@
     </div>
 </div>
 
-<!-- banner -->
-<nz-card class="banner m-3">
-    <div class="d-flex justify-content-between">
-        <div class="banner-title">
-            EMPLOYERS
-        </div>
-        <div class="banner-offer-message">
-            WELCOME OFFER - FREE JOB Postings and Much More.
-        </div>
+<!-- apply count -->
+<div class="apply-count text-center">
+    <div class="title">
+        Bringing you the Perfect Job !
     </div>
-</nz-card>
+    <div class="sub-title">
+        11,000+ JOBS to Apply
+    </div>
+</div>
+
+<!-- search -->
+<div class="d-flex justify-content-center mt-3">
+    <nz-card class="search-section">
+        <div class="d-flex justify-content-center align-items center">
+            <input placeholder="Search Jobs Now" type="search" nz-input class="search-input mr-2">
+            <span class="button button-full">Search</span>
+        </div>
+        <div class="d-flex justify-content-center align-items center mt-2">
+            <span class="button button-white mr-3">View Jobs</span>
+            <span class="button button-full">Register For Free</span>
+        </div>
+        <div class="tag-container mt-2">
+            <a href="#" class="tag">#Fresher</a>
+            <a href="#" class="tag">#Work From Home</a>
+            <a href="#" class="tag">#WFH</a>
+            <a href="#" class="tag">#IT</a>
+            <a href="#" class="tag">#HR</a>
+            <a href="#" class="tag">#Back Office</a>
+            <a href="#" class="tag">#BPO Jobs</a>
+            <a href="#" class="tag">#ITES</a>
+            <a href="#" class="tag">#Finance</a>
+            <a href="#" class="tag">#Accounts</a>
+            <a href="#" class="tag">#Medical</a>
+            <a href="#" class="tag">#Pharma</a>
+            <a href="#" class="tag">#Manager</a>
+            <a href="#" class="tag">#Developer</a>
+            <a href="#" class="tag">#Marketing</a>
+            <a href="#" class="tag">#Engineering</a>
+            <a href="#" class="tag">#Non Government Jobs</a>
+        </div>
+    </nz-card>
+</div>
+
+<!-- banner -->
+<div *ngIf="is_banner" class="d-flex justify-content-center">
+    <nz-card class="banner mx-auto">
+        <span (click)="is_banner = false" class="close-icon">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="banner-title">
+                EMPLOYERS
+            </div>
+            <div class="banner-offer-message" data-text="WELCOME OFFER - FREE JOB Postings and Much More.">
+                WELCOME OFFER - FREE JOB Postings and Much More.
+            </div>
+            <div>
+                <span class="button button-full mr-3">Register For Free</span>
+                <span class="button button-white mr-3">Post A Job</span>
+            </div>
+        </div>
+    </nz-card>
+</div>
