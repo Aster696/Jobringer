@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-384a9a {
+    color: #384a9a;
+}
+
+.text-4761ac {
+    color: #4761ac;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.font-2rem {
+    font-size: 2rem;
+}
+
+.font-12px {
+    font-size: 12px;
+}
+
+.font-20px {
+    font-size: 20px;
+}
+
+.font-22px {
+    font-size: 22px;
+}
+
+.font-24px {
+    font-size: 24px;
+}
+
+.font-26px {
+    font-size: 26px;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.font-600 {
+    font-weight: 600;
+}
+
+.font-700 {
+    font-weight: 700;
+}
+
+.br-10px {
+    border-radius: 10px;
+}
+
+/* mobile view */
+.display-768px {
+    display: none;
+}
+
+.display-pluse {
+    display: block;
+}

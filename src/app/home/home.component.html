@@ -1,12 +1,20 @@
 <div class="navbar">
     <img src="assets/images/logo.svg" alt="jobringer" class="logo">
-    <div>
+    <div class="display-pluse">
         <span class="nav-text">Jobs</span>
         <span class="nav-text">Active Employers</span>
         <span class="nav-text">Job Blogs</span>
         <span class="nav-text mr-3">Pricing</span>
         <span class="button button-outline mr-3">Jobseeker Login</span>
         <span class="button button-full mr-3">Register For Free</span>
+    </div>
+    <div class="display-768px">
+        <div class="active-user mb-0" data-text="11,000+">
+            11,000+
+        </div>
+        <div class="active-user" data-text="Active Jobs">
+            Active Jobs
+        </div>
     </div>
 </div>
 
@@ -53,25 +61,217 @@
 </div>
 
 <!-- feature jobs -->
-
-
-<!-- banner -->
-<div *ngIf="is_banner" class="d-flex justify-content-center">
-    <nz-card class="banner mx-auto">
-        <span (click)="is_banner = false" class="close-icon">
-            <i class="fa fa-times" aria-hidden="true"></i>
-        </span>
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="banner-title">
-                EMPLOYERS
+<div class="text-center text-384a9a font-700 font-24px mt-2">
+    Featured Jobs
+</div>
+<swiper [slidesPerView]="4" [spaceBetween]="20" [loop]="true" [navigation]="true" [autoplay]="{
+    delay: 3000,
+    disableOnInteraction: false
+    }" [speed]="500" [breakpoints]="swiperBreakpoints" class="job-slider">
+    <ng-template swiperSlide *ngFor="let job of jobs">
+        <div class="job-card">
+            <nz-badge class="badge">
+                <a href="#">{{job.type}}</a>
+            </nz-badge>
+            <h5 class="text-384a9a">{{ job.title }}</h5>
+            <div>{{ job.company }}</div>
+            <div class="text-secondary font-12px d-flex align-items-center">
+                <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
+                <span class="ml-2">
+                    {{job.time}}
+                </span>
             </div>
-            <div class="banner-offer-message" data-text="WELCOME OFFER - FREE JOB Postings and Much More.">
-                WELCOME OFFER - FREE JOB Postings and Much More.
+            <div class="text-secondary font-12px d-flex align-items-center mt-2">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                <span class="ml-2">
+                    {{job.experience}}
+                </span>
             </div>
-            <div>
-                <span class="button button-full mr-3">Employer Login</span>
-                <span class="button button-white mr-3">Post A Job</span>
+            <div class="text-secondary font-12px d-flex align-items-center mt-2">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span class="ml-2">
+                    {{job.location}}
+                </span>
+            </div>
+            <div class="button button-full-blue mt-4">
+                Apply <i class="fa fa-paper-plane" aria-hidden="true"></i>
             </div>
         </div>
-    </nz-card>
+    </ng-template>
+</swiper>
+<!-- feature employers -->
+<div class="text-center text-384a9a font-700 font-24px mt-2">
+    Featured Employers
 </div>
+<div class="d-flex justify-content-center">
+    <swiper [slidesPerView]="10" [spaceBetween]="20" [loop]="true" [autoplay]="{
+        delay: 3000,
+        disableOnInteraction: false
+        }" [speed]="500" [breakpoints]="swiperEmpBreakpoints" class="job-slider-emp">
+        <ng-template swiperSlide *ngFor="let img of employers">
+            <div class="card d-flex justify-content-center">
+                <img [src]="img" alt="emp" class="card-img">
+            </div>
+        </ng-template>
+    </swiper>
+</div>
+<!-- download app section -->
+<div class="download-container">
+    <div class="download-sub-container">
+        <div class="font-26px font-500 uppercase">
+            Apply to JOBS On-The-Go
+        </div>
+        <div class="font-22px text-384a9a">
+            Jobringer Mobile App
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <img src="https://www.jobringer.com/images/anroid.png" alt="googleplay" class="cursor-pointer">
+            </div>
+            <div class="col-md-6">
+                <img src="https://www.jobringer.com/images/ios.png" alt="apple" class="cursor-pointer">
+            </div>
+        </div>
+        <h3 class="font-2rem font-500 uppercase mt-3">
+            Mobile App
+            <span class="text-384a9a cursor-pointer">
+                Download
+            </span>
+        </h3>
+    </div>
+</div>
+<!-- fotter section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-tile text-center">
+            <div class="font-24px font-600 uppercase">
+                Jobs in India
+            </div>
+            <div class="tag-container mt-2">
+                <a href="#" class="tag">#Mumbai</a>
+                <a href="#" class="tag">#Delhi</a>
+                <a href="#" class="tag">#Ajmer</a>
+                <a href="#" class="tag">#Pune</a>
+                <a href="#" class="tag">#Hyderabad</a>
+                <a href="#" class="tag">#Agra</a>
+                <a href="#" class="tag">#Chennai</a>
+                <a href="#" class="tag">#Kolkata</a>
+                <a href="#" class="tag">#Indore</a>
+                <a href="#" class="tag">#Gurugram</a>
+                <a href="#" class="tag">#Jaipur</a>
+                <a href="#" class="tag">#Ahmedabad</a>
+            </div>
+        </div>
+        <div class="footer-tile text-center">
+            <div class="font-24px font-600 uppercase">
+                International Jobs
+            </div>
+            <div class="tag-container mt-2">
+                <a href="#" class="tag">#Africa</a>
+                <a href="#" class="tag">#USA</a>
+                <a href="#" class="tag">#UK</a>
+                <a href="#" class="tag">#Australia</a>
+                <a href="#" class="tag">#Canada</a>
+                <a href="#" class="tag">#Singapore</a>
+                <a href="#" class="tag">#Dubai</a>
+                <a href="#" class="tag">#Saudi Arabia</a>
+                <a href="#" class="tag">#New Zealand</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- padding bootom -->
+<div class="padding-mz"></div>
+<!-- mobile nav bar -->
+<section class="display-768px">
+    <div class="navbar-mobile">
+        <div class="row w-100">
+            <div class="col-3 text-center d-flex align-items-center text-4761ac">
+                <i class="fa fa-bars mobile-nav-icon" aria-hidden="true"></i>
+            </div>
+            <div class="col-3 d-flex text-center">
+                <div class="mt-auto">
+                    <img src="https://jobringer.com/images/Jobringer_icon.png" width="23" height="23"
+                        alt="jobringer jobs">
+                    <div class="font-20px">Home</div>
+                </div>
+            </div>
+            <div class="col-3 d-flex text-center">
+                <div class="mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
+                        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path stroke="#344054"
+                                d="M31.25 22.917v4.166m2.083-12.5H16.667v-6.25A2.083 2.083 0 0 1 18.75 6.25h12.5a2.083 2.083 0 0 1 2.083 2.083zm2.084 8.334H14.583z">
+                            </path>
+                            <path stroke="#306CFE"
+                                d="M43.75 41.667v-25a2.084 2.084 0 0 0-2.083-2.084H8.333c-1.15 0-2.083.933-2.083 2.084v25c0 1.15.933 2.083 2.083 2.083h33.334c1.15 0 2.083-.933 2.083-2.083">
+                            </path>
+                        </g>
+                    </svg>
+                    <div class="font-20px">Jobs</div>
+                </div>
+            </div>
+            <div class="col-3 d-flex text-center">
+                <div class="mt-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"
+                        class="text-4761ac">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 11h3m0 0h3m-3 0v3m0-3V8m-3 11v-1.25c0-2.071-1.919-3.75-4.286-3.75H7.286C4.919 14 3 15.679 3 17.75V19m9-11a3 3 0 1 1-6 0a3 3 0 0 1 6 0">
+                        </path>
+                    </svg>
+                    <div class="font-20px">Login</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner -->
+<section class="display-pluse">
+    <div *ngIf="is_banner" class="d-flex justify-content-center">
+        <nz-card class="banner mx-auto">
+            <span (click)="is_banner = false" class="close-icon">
+                <span nz-icon nzType="close" nzTheme="outline"></span>
+            </span>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="banner-title">
+                    EMPLOYERS
+                </div>
+                <div class="banner-offer-message" data-text="WELCOME OFFER - FREE JOB Postings and Much More.">
+                    WELCOME OFFER - FREE JOB Postings and Much More.
+                </div>
+                <div>
+                    <span class="button button-full mr-3">Employer Login</span>
+                    <span class="button button-white mr-3">Post A Job</span>
+                    <span class="text-white cursor-pointer mr-3">
+                        <u>Sales Enquiry</u>
+                    </span>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</section>
+<!-- mobile banner -->
+<section class="display-768px">
+    <div *ngIf="is_banner" class="d-flex justify-content-center">
+        <nz-card class="banner mx-auto">
+            <span (click)="is_banner = false" class="close-icon">
+                <span nz-icon nzType="close" nzTheme="outline"></span>
+            </span>
+            <div>
+                <div class="banner-title">
+                    EMPLOYERS
+                </div>
+                <div class="d-flex mt-3">
+                    <span class="button button-full mr-3">Employer Login</span>
+                    <span class="button button-white mr-3">Post A Job</span>
+                </div>
+                <div class="mt-3">
+                    <span class="text-white cursor-pointer mr-3">
+                        <u>Sales Enquiry</u>
+                    </span>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</section>
