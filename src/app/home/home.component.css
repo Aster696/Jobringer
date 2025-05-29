@@ -226,8 +226,6 @@
 }
 
 /* footer */
-.footer {}
-
 .footer-container {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -240,6 +238,42 @@
     background-size: cover;
     background-position: center;
     padding: 20px;
+}
+
+.sub-footer {
+    background-image: url('https://www.jobringer.com/images/rec-right.png');
+    background-size: cover;
+    background-position: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 220px;
+    padding-right: 220px;
+    background-color: #d5f1f1;
+    text-align: center;
+}
+
+.sub-footer-b {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: #d5f1f1;
+    text-align: center;
+}
+
+.disclaimer {
+    height: 130px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.bd-bottom-1px {
+    border-bottom: 1px solid gray;
+}
+
+.boarder-y {
+    border-top: 2px solid #2b438d;
+    border-bottom: 2px solid #2b438d;
 }
 
 /* banner */
@@ -317,7 +351,7 @@
 }
 
 .padding-mz {
-    padding: 50px;
+    display: none;
 }
 
 /* mobile nav bar */
@@ -340,7 +374,11 @@
 }
 
 
-@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 1024px) {
+    .banner-offer-message {
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .display-768px {
@@ -363,5 +401,43 @@
         padding-left: 5%;
         background-image: none;
         text-align: center;
+    }
+
+    .padding-mz {
+        padding: 33px;
+        display: block;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 100%;
+        /* gap: 10px; */
+        width: 99%;
+    }
+
+    .sub-footer {
+        background-image: url('https://www.jobringer.com/images/rec-right.png');
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+        background-color: #d5f1f1;
+        text-align: center;
+    }
+
+    .sub-footer-b {
+        padding-top: 20px;
+        padding: 10px;
+        background-color: #d5f1f1;
+        text-align: center;
+    }
+
+    .tag-container {
+        height: 60px;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    .whats-app-circle {
+        bottom: 80px;
     }
 }

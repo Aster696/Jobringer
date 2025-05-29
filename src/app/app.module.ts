@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NgZorroModule } from './ng-zorro/ng-zorro.module';
 import { SwiperModule } from 'swiper/angular';
+import { Page404Component } from './page404/page404.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        Page404Component
     ],
     imports: [
         BrowserModule,

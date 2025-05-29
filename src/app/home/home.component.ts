@@ -69,5 +69,9 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    goToWebsite(path: string) {
+        window.location.href = path;
+    }
+
 
 }
